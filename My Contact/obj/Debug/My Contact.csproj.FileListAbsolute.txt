@@ -8,3 +8,20 @@ C:\Users\neta9\Desktop\WSIZ\WSIZ - laboratorium\semestr 4\Programowanie - projek
 C:\Users\neta9\Desktop\WSIZ\WSIZ - laboratorium\semestr 4\Programowanie - projekt\My Contact\My Contact\obj\Debug\My Contact.csproj.CoreCompileInputs.cache
 C:\Users\neta9\Desktop\WSIZ\WSIZ - laboratorium\semestr 4\Programowanie - projekt\My Contact\My Contact\obj\Debug\My Contact.exe
 C:\Users\neta9\Desktop\WSIZ\WSIZ - laboratorium\semestr 4\Programowanie - projekt\My Contact\My Contact\obj\Debug\My Contact.pdb
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\bin\Debug\My Contact.exe.config
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\bin\Debug\My Contact.exe
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\bin\Debug\My Contact.pdb
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\bin\Debug\EntityFramework.dll
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\bin\Debug\EntityFramework.xml
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My Contact.csprojAssemblyReference.cache
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My_Contact.formMyContact.resources
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My_Contact.Properties.Resources.resources
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My Contact.csproj.GenerateResource.cache
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My Contact.csproj.CoreCompileInputs.cache
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My Contact.csproj.CopyComplete
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My Contact.exe
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My Contact.pdb
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My_Contact.Migrations.CreateContact.resources
+C:\Users\vagrant\Desktop\Projects\My_Contact\My Contact\obj\Debug\My_Contact.Migrations.UpdateContactColumns.resources
