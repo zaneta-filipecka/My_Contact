@@ -42,6 +42,7 @@ namespace My_Contact
             catch (DbEntityValidationException /* dex*/)
             {
                 MessageBox.Show("Failed to save");
+                context = new MyContactContext();
             }
 
             var contacts = context.Contacts.ToList();
