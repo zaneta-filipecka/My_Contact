@@ -59,5 +59,16 @@ namespace My_Contact
             textBoxEmail.Text = "";
             textBoxCompany.Text = "";
         }
+
+        private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            textBoxId.Text = dgvContactList.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBoxFirstName.Text = dgvContactList.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBoxLastName.Text = dgvContactList.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBoxAddress.Text = dgvContactList.Rows[e.RowIndex].Cells[3].Value.ToString();
+            textBoxEmail.Text = dgvContactList.Rows[e.RowIndex].Cells[4].Value.ToString();
+            textBoxPhone.Text = dgvContactList.Rows[e.RowIndex].Cells[5].Value.ToString();
+            textBoxCompany.Text = dgvContactList.Rows[e.RowIndex].Cells[6].Value.ToString();
+        }
     }
 }

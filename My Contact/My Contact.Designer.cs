@@ -255,6 +255,7 @@
             this.dgvContactList.Name = "dgvContactList";
             this.dgvContactList.Size = new System.Drawing.Size(413, 286);
             this.dgvContactList.TabIndex = 21;
+            this.dgvContactList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvContactList_RowHeaderMouseClick);
             // 
             // formMyContact
             // 
