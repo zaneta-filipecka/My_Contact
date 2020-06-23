@@ -2,9 +2,13 @@
 {
     using System;
     using System.Data.Entity.Migrations;
-    
+
+    //! This class creates Contact table in database 
     public partial class CreateContact : DbMigration
     {
+        /**
+         * Method that creates Contacts table in database. 
+         */
         public override void Up()
         {
             CreateTable(
@@ -22,7 +26,10 @@
                 .PrimaryKey(t => t.Id);
             
         }
-        
+
+        /**
+         * Method that removes Contacts table from database. 
+         */
         public override void Down()
         {
             DropTable("dbo.Contacts");
