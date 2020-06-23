@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.Migrations;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Windows.Forms;
@@ -37,7 +38,7 @@ namespace My_Contact
             {
                 context.Contacts.Add(contact);
                 context.SaveChanges();
-                MessageBox.Show("Saved contact");
+                MessageBox.Show("Contact has been added");
             }
             catch (DbEntityValidationException /* dex*/)
             {
@@ -52,6 +53,7 @@ namespace My_Contact
 
         private void cleanForm()
         {
+            textBoxId.Text = "";
             textBoxFirstName.Text = "";
             textBoxLastName.Text = "";
             textBoxPhone.Text = "";
@@ -69,6 +71,77 @@ namespace My_Contact
             textBoxEmail.Text = dgvContactList.Rows[e.RowIndex].Cells[4].Value.ToString();
             textBoxPhone.Text = dgvContactList.Rows[e.RowIndex].Cells[5].Value.ToString();
             textBoxCompany.Text = dgvContactList.Rows[e.RowIndex].Cells[6].Value.ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            var contact = new Contact
+            {
+                Id = int.Parse(textBoxId.Text),
+                FirstName = textBoxFirstName.Text,
+                LastName = textBoxLastName.Text,
+                Phone = textBoxPhone.Text,
+                Address = textBoxAddress.Text,
+                Email = textBoxEmail.Text,
+                Company = textBoxCompany.Text
+            };
+
+            try
+            {
+                context.Contacts.AddOrUpdate(c => c.Id, contact);
+                context.SaveChanges();
+                MessageBox.Show("Contact has been updated");
+            }
+            catch (DbEntityValidationException /* dex*/)
+            {
+                MessageBox.Show("Failed to save");
+                context = new MyContactContext();
+            }
+
+            var contacts = context.Contacts.ToList();
+            dgvContactList.DataSource = contacts;
+            cleanForm();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Contact contact = context.Contacts.Find(int.Parse(textBoxId.Text));
+                context.Contacts.Remove(contact);
+                context.SaveChanges();
+                MessageBox.Show("Contact has been deleted");
+            }
+            catch (DbEntityValidationException /* dex*/)
+            {
+                MessageBox.Show("Failed to save");
+                context = new MyContactContext();
+            }
+
+            var contacts = context.Contacts.ToList();
+            dgvContactList.DataSource = contacts;
+            cleanForm();
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            cleanForm();
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = textBoxSearch.Text;
+            var contacts = from c in context.Contacts
+                           where c.FirstName.Contains(keyword)
+                           || c.LastName.Contains(keyword)
+                           || c.Email.Contains(keyword)
+                           || c.Address.Contains(keyword)
+                           || c.Company.Contains(keyword)
+                           || c.Phone.Contains(keyword)
+                           select c;
+            dgvContactList.DataSource = contacts.ToList();
+
         }
     }
 }
