@@ -15,6 +15,6 @@
         </providers>
     </entityFramework>
 	<connectionStrings>
-		<add name="MyContactContext" connectionString="Data Source=DESKTOP-SO1LRGU;Initial Catalog=--Database Name--;Integrated Security=True;" providerName="System.Data.SqlClient"/>
+		<add name="MyContactContext" connectionString="Data Source=--Database Server Name--;Initial Catalog=--Database Name--;Integrated Security=True;" providerName="System.Data.SqlClient"/>
 	</connectionStrings>
 </configuration>
