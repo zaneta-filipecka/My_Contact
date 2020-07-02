@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace My_Contact
 {
+    //! This it main runner of program.
     static class Program
     {
         /// <summary>

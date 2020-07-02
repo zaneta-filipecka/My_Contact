@@ -8,6 +8,7 @@ using My_Contact.Entity;
 
 namespace My_Contact
 {
+    //! This is partial class that runs up the form 
     public partial class formMyContact : Form
     {
         private MyContactContext context = new MyContactContext();
@@ -24,31 +25,38 @@ namespace My_Contact
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var contact = new Contact
+            if ("" == textBoxId.Text)
             {
-                FirstName = textBoxFirstName.Text,
-                LastName = textBoxLastName.Text,
-                Phone = textBoxPhone.Text,
-                Address = textBoxAddress.Text,
-                Email = textBoxEmail.Text,
-                Company = textBoxCompany.Text
-            };
+                var contact = new Contact
+                {
+                    FirstName = textBoxFirstName.Text,
+                    LastName = textBoxLastName.Text,
+                    Phone = textBoxPhone.Text,
+                    Address = textBoxAddress.Text,
+                    Email = textBoxEmail.Text,
+                    Company = textBoxCompany.Text
+                };
 
-            try
-            {
-                context.Contacts.Add(contact);
-                context.SaveChanges();
-                MessageBox.Show("Contact has been added");
-            }
-            catch (DbEntityValidationException /* dex*/)
+                try
+                {
+                    context.Contacts.Add(contact);
+                    context.SaveChanges();
+                    MessageBox.Show("Contact has been added");
+                }
+                catch (DbEntityValidationException /* dex*/)
+                {
+                    MessageBox.Show("Failed to save");
+                    context = new MyContactContext();
+                }
+
+                var contacts = context.Contacts.ToList();
+                dgvContactList.DataSource = contacts;
+                cleanForm();
+            } else
             {
                 MessageBox.Show("Failed to save");
                 context = new MyContactContext();
             }
-
-            var contacts = context.Contacts.ToList();
-            dgvContactList.DataSource = contacts;
-            cleanForm();
         }
 
         private void cleanForm()
@@ -75,53 +83,66 @@ namespace My_Contact
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            var contact = new Contact
+            if ("" != textBoxId.Text)
             {
-                Id = int.Parse(textBoxId.Text),
-                FirstName = textBoxFirstName.Text,
-                LastName = textBoxLastName.Text,
-                Phone = textBoxPhone.Text,
-                Address = textBoxAddress.Text,
-                Email = textBoxEmail.Text,
-                Company = textBoxCompany.Text
-            };
+                var contact = new Contact
+                {
+                    Id = int.Parse(textBoxId.Text),
+                    FirstName = textBoxFirstName.Text,
+                    LastName = textBoxLastName.Text,
+                    Phone = textBoxPhone.Text,
+                    Address = textBoxAddress.Text,
+                    Email = textBoxEmail.Text,
+                    Company = textBoxCompany.Text
+                };
 
-            try
-            {
-                context.Contacts.AddOrUpdate(c => c.Id, contact);
-                context.SaveChanges();
-                MessageBox.Show("Contact has been updated");
-            }
-            catch (DbEntityValidationException /* dex*/)
+                try
+                {
+                    context.Contacts.AddOrUpdate(c => c.Id, contact);
+                    context.SaveChanges();
+                    MessageBox.Show("Contact has been updated");
+                }
+                catch (DbEntityValidationException /* dex*/)
+                {
+                    MessageBox.Show("Failed to save");
+                    context = new MyContactContext();
+                }
+
+                var contacts = context.Contacts.ToList();
+                dgvContactList.DataSource = contacts;
+                cleanForm();
+            } else
             {
                 MessageBox.Show("Failed to save");
                 context = new MyContactContext();
             }
-
-            var contacts = context.Contacts.ToList();
-            dgvContactList.DataSource = contacts;
-            cleanForm();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            try
+            if ("" != textBoxId.Text)
             {
-                Contact contact = context.Contacts.Find(int.Parse(textBoxId.Text));
-                context.Contacts.Remove(contact);
-                context.SaveChanges();
-                MessageBox.Show("Contact has been deleted");
-            }
-            catch (DbEntityValidationException /* dex*/)
+                try
+                {
+                    Contact contact = context.Contacts.Find(int.Parse(textBoxId.Text));
+                    context.Contacts.Remove(contact);
+                    context.SaveChanges();
+                    MessageBox.Show("Contact has been deleted");
+                }
+                catch (DbEntityValidationException /* dex*/)
+                {
+                    MessageBox.Show("Failed to save");
+                    context = new MyContactContext();
+                }
+
+                var contacts = context.Contacts.ToList();
+                dgvContactList.DataSource = contacts;
+                cleanForm();
+            } else
             {
                 MessageBox.Show("Failed to save");
                 context = new MyContactContext();
             }
-
-            var contacts = context.Contacts.ToList();
-            dgvContactList.DataSource = contacts;
-            cleanForm();
         }
 
         private void btnClean_Click(object sender, EventArgs e)
