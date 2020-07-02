@@ -10,11 +10,6 @@ Application is created to simplify process of collecting users contact list.
 * Compatible database engine
 * .net framework installed on OS
 
-### How to generate doxygen documentation
-* Open package manager console
-* Go to directory `My Contact`
-* Run command `doxygen .\dconfig`
-
 ### How to build and start application:
 * Download application from git repository
 * Copy file `App.config-dist` to `App.config`
@@ -23,3 +18,9 @@ Application is created to simplify process of collecting users contact list.
 * Build project
 * In NuGet console run command `Update-Database`
 * Run the project
+
+### How to generate doxygen documentation
+* Project must be built before you want to generate doxygen documentation
+* Open package manager console
+* Go to directory `My Contact`
+* Run command `doxygen .\dconfig`
