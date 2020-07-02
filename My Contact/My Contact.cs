@@ -23,7 +23,12 @@ namespace My_Contact
             dgvContactList.DataSource = contacts;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        public void btnClean_Click()
+        {
+            cleanForm();
+        }
+
+        public void btnAdd_Click(object sender, EventArgs e)
         {
             if ("" == textBoxId.Text)
             {
@@ -70,7 +75,7 @@ namespace My_Contact
             textBoxCompany.Text = "";
         }
 
-        private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        public void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             textBoxId.Text = dgvContactList.Rows[e.RowIndex].Cells[0].Value.ToString();
             textBoxFirstName.Text = dgvContactList.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -145,7 +150,7 @@ namespace My_Contact
             }
         }
 
-        private void btnClean_Click(object sender, EventArgs e)
+        public void btnClean_Click(object sender, EventArgs e)
         {
             cleanForm();
         }

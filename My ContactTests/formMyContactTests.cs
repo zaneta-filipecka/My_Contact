@@ -12,9 +12,16 @@ namespace My_Contact.Tests
     public class formMyContactTests
     {
         [TestMethod()]
-        public void formMyContactTest()
+        public void formMyContactCleanFormTest()
         {
-            Assert.IsTrue(true);
+            var contactForm = new formMyContact();
+            contactForm.textBoxId.Text = "1";
+            contactForm.textBoxAddress.Text = "Address";
+
+            contactForm.btnClean_Click();
+
+            Assert.AreEqual("", contactForm.textBoxId.Text);
+            Assert.AreEqual("", contactForm.textBoxAddress.Text);
         }
     }
 }
