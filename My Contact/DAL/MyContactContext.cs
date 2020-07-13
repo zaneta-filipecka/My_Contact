@@ -8,12 +8,14 @@ using My_Contact.Entity;
 
 namespace My_Contact.DAL
 {
-    //! This class alows to connect with database
+    /// <summary>
+    /// This class alows to connect with database
+    /// </summary>
     class MyContactContext : DbContext
     {
-        /**
-         * This is the database handler that alows to connect with Contacts table in database. 
-         */
+        /// <summary>
+        /// This is the database handler that alows to connect with Contacts table in database.  
+        /// </summary>
         public DbSet<Contact> Contacts { get; set; }
     }
 }

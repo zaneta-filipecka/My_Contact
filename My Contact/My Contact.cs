@@ -8,10 +8,16 @@ using My_Contact.Entity;
 
 namespace My_Contact
 {
-    //! This is partial class that runs up the form 
+    /// <summary>
+    /// This is partial class that runs up the form 
+    /// </summary>
     public partial class formMyContact : Form
     {
         private MyContactContext context = new MyContactContext();
+        
+        /// <summary>
+        /// Method where are initialized components of project
+        /// </summary>
         public formMyContact()
         {
             InitializeComponent();
@@ -23,11 +29,19 @@ namespace My_Contact
             dgvContactList.DataSource = contacts;
         }
 
+        /// <summary>
+        /// Method connected to click on clean button
+        /// </summary>
         public void btnClean_Click()
         {
             cleanForm();
         }
 
+        /// <summary>
+        /// Method connected with click add button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnAdd_Click(object sender, EventArgs e)
         {
             if ("" == textBoxId.Text)
@@ -75,6 +89,11 @@ namespace My_Contact
             textBoxCompany.Text = "";
         }
 
+        /// <summary>
+        /// Method connected with clicking on header of row on datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             textBoxId.Text = dgvContactList.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -86,6 +105,11 @@ namespace My_Contact
             textBoxCompany.Text = dgvContactList.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 
+        /// <summary>
+        /// Method connected with clicking on update button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if ("" != textBoxId.Text)
@@ -150,6 +174,11 @@ namespace My_Contact
             }
         }
 
+        /// <summary>
+        /// Method connected with click on clean button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnClean_Click(object sender, EventArgs e)
         {
             cleanForm();

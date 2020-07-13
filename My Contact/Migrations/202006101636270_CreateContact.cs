@@ -3,12 +3,14 @@
     using System;
     using System.Data.Entity.Migrations;
 
-    //! This class creates Contact table in database 
+    /// <summary>
+    /// This class creates Contact table in database 
+    /// </summary>
     public partial class CreateContact : DbMigration
     {
-        /**
-         * Method that creates Contacts table in database. 
-         */
+        /// <summary>
+        /// Method that creates Contacts table in database. 
+        /// </summary>
         public override void Up()
         {
             CreateTable(
@@ -27,9 +29,9 @@
             
         }
 
-        /**
-         * Method that removes Contacts table from database. 
-         */
+        /// <summary>
+        /// Method that removes Contacts table from database. 
+        /// </summary>
         public override void Down()
         {
             DropTable("dbo.Contacts");

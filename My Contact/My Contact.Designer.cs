@@ -310,12 +310,33 @@
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblCompany;
+        /// <summary>
+        /// Variable connected with Id textbox
+        /// </summary>
         public System.Windows.Forms.TextBox textBoxId;
+        /// <summary>
+        /// Variable connected with FirstName textbox
+        /// </summary>
         public System.Windows.Forms.TextBox textBoxFirstName;
+        /// <summary>
+        /// Variable connected with LastName textbox
+        /// </summary>
         public System.Windows.Forms.TextBox textBoxLastName;
+        /// <summary>
+        /// Variable connected with Phone textbox
+        /// </summary>
         public System.Windows.Forms.TextBox textBoxPhone;
+        /// <summary>
+        /// Variable connected with Address textbox
+        /// </summary>
         public System.Windows.Forms.TextBox textBoxAddress;
+        /// <summary>
+        /// Variable connected with Email textbox
+        /// </summary>
         public System.Windows.Forms.TextBox textBoxEmail;
+        /// <summary>
+        /// Variable connected with Company textbox
+        /// </summary>
         public System.Windows.Forms.TextBox textBoxCompany;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
