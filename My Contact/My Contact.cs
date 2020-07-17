@@ -133,7 +133,7 @@ namespace My_Contact
                 }
                 catch (DbEntityValidationException /* dex*/)
                 {
-                    MessageBox.Show("Failed to save");
+                    MessageBox.Show("Failed to update");
                     context = new MyContactContext();
                 }
 
@@ -142,7 +142,7 @@ namespace My_Contact
                 cleanForm();
             } else
             {
-                MessageBox.Show("Failed to save");
+                MessageBox.Show("Failed to update");
                 context = new MyContactContext();
             }
         }
@@ -160,7 +160,7 @@ namespace My_Contact
                 }
                 catch (DbEntityValidationException /* dex*/)
                 {
-                    MessageBox.Show("Failed to save");
+                    MessageBox.Show("Failed to delete");
                     context = new MyContactContext();
                 }
 
@@ -169,7 +169,7 @@ namespace My_Contact
                 cleanForm();
             } else
             {
-                MessageBox.Show("Failed to save");
+                MessageBox.Show("Failed to delete");
                 context = new MyContactContext();
             }
         }
