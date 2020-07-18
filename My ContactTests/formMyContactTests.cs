@@ -14,11 +14,11 @@ namespace My_Contact.Tests
         [TestMethod()]
         public void formMyContactCleanFormTest()
         {
-            var contactForm = new formMyContact();
+            var contactForm = new FormMyContact();
             contactForm.textBoxId.Text = "1";
             contactForm.textBoxAddress.Text = "Address";
 
-            contactForm.btnClean_Click();
+            contactForm.BtnClean_Click();
 
             Assert.AreEqual("", contactForm.textBoxId.Text);
             Assert.AreEqual("", contactForm.textBoxAddress.Text);

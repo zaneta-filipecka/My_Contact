@@ -17,7 +17,7 @@ namespace My_Contact
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formMyContact());
+            Application.Run(new FormMyContact());
         }
     }
 }

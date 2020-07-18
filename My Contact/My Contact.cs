@@ -11,19 +11,19 @@ namespace My_Contact
     /// <summary>
     /// This is partial class that runs up the form 
     /// </summary>
-    public partial class formMyContact : Form
+    public partial class FormMyContact : Form
     {
         private MyContactContext context = new MyContactContext();
         
         /// <summary>
         /// Method where are initialized components of project
         /// </summary>
-        public formMyContact()
+        public FormMyContact()
         {
             InitializeComponent();
         }
 
-        private void formMyContact_Load(object sender, EventArgs e)
+        private void FormMyContact_Load(object sender, EventArgs e)
         {
             var contacts = context.Contacts.ToList();
             dgvContactList.DataSource = contacts;
@@ -32,9 +32,9 @@ namespace My_Contact
         /// <summary>
         /// Method connected to click on clean button
         /// </summary>
-        public void btnClean_Click()
+        public void BtnClean_Click()
         {
-            cleanForm();
+            CleanForm();
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace My_Contact
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void btnAdd_Click(object sender, EventArgs e)
+        public void BtnAdd_Click(object sender, EventArgs e)
         {
             if ("" == textBoxId.Text)
             {
@@ -70,7 +70,7 @@ namespace My_Contact
 
                 var contacts = context.Contacts.ToList();
                 dgvContactList.DataSource = contacts;
-                cleanForm();
+                CleanForm();
             } else
             {
                 MessageBox.Show("Failed to save");
@@ -78,7 +78,7 @@ namespace My_Contact
             }
         }
 
-        private void cleanForm()
+        private void CleanForm()
         {
             textBoxId.Text = "";
             textBoxFirstName.Text = "";
@@ -94,7 +94,7 @@ namespace My_Contact
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        public void DgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             textBoxId.Text = dgvContactList.Rows[e.RowIndex].Cells[0].Value.ToString();
             textBoxFirstName.Text = dgvContactList.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -110,7 +110,7 @@ namespace My_Contact
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void BtnUpdate_Click(object sender, EventArgs e)
         {
             if ("" != textBoxId.Text)
             {
@@ -139,7 +139,7 @@ namespace My_Contact
 
                 var contacts = context.Contacts.ToList();
                 dgvContactList.DataSource = contacts;
-                cleanForm();
+                CleanForm();
             } else
             {
                 MessageBox.Show("Failed to update");
@@ -147,7 +147,7 @@ namespace My_Contact
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             if ("" != textBoxId.Text)
             {
@@ -166,7 +166,7 @@ namespace My_Contact
 
                 var contacts = context.Contacts.ToList();
                 dgvContactList.DataSource = contacts;
-                cleanForm();
+                CleanForm();
             } else
             {
                 MessageBox.Show("Failed to delete");
@@ -179,12 +179,12 @@ namespace My_Contact
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void btnClean_Click(object sender, EventArgs e)
+        public void BtnClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            CleanForm();
         }
 
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
         {
             string keyword = textBoxSearch.Text;
             var contacts = from c in context.Contacts

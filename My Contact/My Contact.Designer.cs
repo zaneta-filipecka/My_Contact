@@ -1,6 +1,6 @@
 ﻿namespace My_Contact
 {
-    partial class formMyContact
+    partial class FormMyContact
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -202,7 +202,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(299, 30);
             this.textBoxSearch.TabIndex = 16;
-            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
             // btnAdd
             // 
@@ -214,7 +214,7 @@
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -226,7 +226,7 @@
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -238,7 +238,7 @@
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnClean
             // 
@@ -250,7 +250,7 @@
             this.btnClean.TabIndex = 20;
             this.btnClean.Text = "Clean";
             this.btnClean.UseVisualStyleBackColor = false;
-            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            this.btnClean.Click += new System.EventHandler(this.BtnClean_Click);
             // 
             // dgvContactList
             // 
@@ -260,7 +260,7 @@
             this.dgvContactList.RowHeadersWidth = 51;
             this.dgvContactList.Size = new System.Drawing.Size(413, 286);
             this.dgvContactList.TabIndex = 21;
-            this.dgvContactList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvContactList_RowHeaderMouseClick);
+            this.dgvContactList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvContactList_RowHeaderMouseClick);
             // 
             // formMyContact
             // 
@@ -293,7 +293,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "formMyContact";
             this.Text = "My Contact";
-            this.Load += new System.EventHandler(this.formMyContact_Load);
+            this.Load += new System.EventHandler(this.FormMyContact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
